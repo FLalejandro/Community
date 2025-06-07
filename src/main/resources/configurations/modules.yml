@@ -1,0 +1,22 @@
+# In this config, you can disable modules and commands in Seam individually.
+# This config is only read on startup, therefore any changes to this config require a restart.
+
+# Modules are settings that have additional logic. Disabling a module disables all associated logic and related commands.
+Modules:
+  bank: true
+  goals: true
+  mayor: true
+
+# You can stop individual commands and command groups from being registered below.
+Commands:
+  # Fun Commands
+  smite: true
+  # Utility Commands
+  broadcast: true
+  checktime: true
+  clearinventory: true
+  feed: true
+  heal: true
+
+# Do not touch this. This is solely for future config updates.
+Config-Version: 1.0

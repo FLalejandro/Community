@@ -1,0 +1,9 @@
+Lang:
+  # Mod Prefix
+  Prefix: "&8&l[<gradient:#96B8C3:#7C93A2>&lSᴇᴀᴍ</gradient>&8&l]&f "
+
+  # Time
+  Time-Check: "<gold>Current World Time: <red>{world-time}"
+
+# Do not touch this. This is solely for future config updates.
+Config-Version: 1.0

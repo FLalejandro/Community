@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "me.novoro.community.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

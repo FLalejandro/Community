@@ -1,0 +1,58 @@
+plugins {
+	id 'fabric-loom' version '1.8-SNAPSHOT'
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+	mavenCentral()
+
+	// Server Gui
+	maven {
+		url "https://maven.nucleoid.xyz/"
+		name "Nucleoid"
+	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// Fabric API
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// LuckPerms
+	compileOnly 'net.luckperms:api:5.4'
+
+	// Fabric Placeholder API
+	modImplementation "eu.pb4:placeholder-api:2.4.1+1.21"
+
+	// Server Gui
+	modImplementation include("eu.pb4:sgui:1.6.0+1.21")
+
+	// SnakeYAML
+	implementation include(group: 'org.yaml', name: 'snakeyaml', version: '2.1')
+
+	// Adventure
+	implementation 'net.kyori:adventure-text-minimessage:4.17.0'
+	modImplementation include("net.kyori:adventure-platform-fabric:5.14.1")
+}
+
+Map<String, String> resourceProperties = new HashMap<>()
+resourceProperties.put("version", project.mod_version)
+resourceProperties.put("loader_version", project.loader_version)
+resourceProperties.put("minecraft_version", project.minecraft_version)
+
+processResources {
+	filesMatching("fabric.mod.json") {
+		expand resourceProperties
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+}

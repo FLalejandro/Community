@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "community",
+  "version": "${version}",
+
+  "name": "Community",
+  "description": "community",
+  "authors": [
+    "Novoro",
+    "Neovitalism"
+  ],
+  "contact": {
+    "homepage": "https://github.com/FLalejandro/Community"
+  },
+
+  "license": "GPLv3",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.novoro.community.Community"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21"
+  },
+
+  "mixins": [
+    "community.mixins.json"
+  ],
+
+  "suggests": {
+    "luckperms": ">=5.4.139"
+  }
+}
